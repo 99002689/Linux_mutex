@@ -36,7 +36,7 @@ void* doSomeThing(void *arg)
         msgrcv(msgid, &message, sizeof(message), 1, 0);
 
         // display the message 
-        printf("Data Received is : %s \n",message.mesg_text);
+        printf("Notification Received is : %s \n",message.mesg_text);
 
 /***********************************************************************/
         pthread_mutex_unlock(&lock);
@@ -65,7 +65,7 @@ int main(void)
     pthread_join(tid[1], NULL);
     pthread_join(tid[2], NULL);
     pthread_join(tid[3], NULL);
-    pthread_join(tid[4], NULL);
+    //pthread_join(tid[4], NULL);
     pthread_mutex_destroy(&lock);
 
     return 0;
